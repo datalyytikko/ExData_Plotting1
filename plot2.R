@@ -3,7 +3,7 @@ library(lubridate)
 library(readr)
 library(dplyr)
 
-#load data if needed
+#fetch data if needed
 if(!file.exists("data.zip")) {
     url <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
     download.file(url, "data.zip")    
@@ -16,7 +16,6 @@ if(!file.exists("household_power_consumption.txt")) {
 
 #read all
 data <- read_delim(file = "household_power_consumption.txt", 
-                   n_max = 2100000, 
                    delim =";", 
                    na = c("?"))
 
